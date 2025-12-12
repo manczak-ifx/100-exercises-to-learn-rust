@@ -13,7 +13,14 @@ mod tests {
 
     #[test]
     fn string_size() {
-        assert_eq!(size_of::<String>(), todo!());
+
+        // pub struct String {
+        //     ptr: *const u8,    // 8 bytes - pointer to heap data
+        //     len: usize,        // 8 bytes - current length
+        //     capacity: usize,   // 8 bytes - allocated capacity
+        // }
+
+        assert_eq!(size_of::<String>(), 3*8);
     }
 
     #[test]
@@ -23,6 +30,6 @@ mod tests {
         // but, in general, the memory layout of structs is a more complex topic.
         // If you're curious, check out the "Type layout" section of The Rust Reference
         // https://doc.rust-lang.org/reference/type-layout.html for more information.
-        assert_eq!(size_of::<Ticket>(), todo!());
+        assert_eq!(size_of::<Ticket>(), 3*3*8);
     }
 }

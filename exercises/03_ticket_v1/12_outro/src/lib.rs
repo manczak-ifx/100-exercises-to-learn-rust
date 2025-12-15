@@ -58,8 +58,7 @@ impl Order {
     }
     pub fn quantity(&self) -> &u32 {
         &self.quantity
-    }
-    
+    }    
     fn validate_unit_price(unit_price: u32) {
         if unit_price == 0 {
             panic!("Unit price must be greater than zero");
@@ -68,9 +67,7 @@ impl Order {
     pub fn set_unit_price(&mut self, unit_price: u32) {
         Self::validate_unit_price(unit_price);
         self.unit_price = unit_price;
-    }
-    
-
+    }    
     pub fn unit_price(&self) -> &u32 {
         &self.unit_price
     }
